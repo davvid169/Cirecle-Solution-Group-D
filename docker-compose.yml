@@ -1,0 +1,10 @@
+# Start the website:  docker compose up
+# Then open:          http://localhost:8080
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      # Live editing: changes in site/ show up after a browser refresh, no rebuild needed
+      - ./site:/usr/share/nginx/html:ro
